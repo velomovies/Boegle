@@ -1,37 +1,47 @@
-# Boegle
+# Boegle - Victor
+
+Five weeks ago we had no idea where we would be on this moment. What have we done by then? What do we learn? At the moment I can tell exactly about what the answers are. In this document you can find everything about the 'Meesterproef' and what I did the past five weeks.
+
 Amsterdam OBA | To search a book
+
 ![A demo of the OBA searchbook](readme_assets/application-introduction-v1.gif)
+
+At the bottom of this readme you can find the team readme. It's the same readme as the [boegle repo](https://github.com/Boegle/Boegle). All things you read there we did together. We divided the application in four things. We choose a part that fits the best by each learn goal we set our selfs.
 
 ## Table of contents
 
 - [Description](#description)
-- [Getting started](#getting_started)
-- [Progression](#progression)
-    - [Week 1](#week-1)
-        - [User story](#user-story)
-        - [User scenario](#user-scenario)
-        - [Concept](#concept)
-    - [Week 2](#week-2)
-        - [Automate workflow](#automate-workflow)
-        - [Coding](#coding)
-        - [Presentation](#presentation)
-    - [Week 3](#week-3)
-        - [Product](#product)
-        - [Testing](#testing)
-    - [Week 4](#week-4)
-        - [Testing](#testing-1)
-    - [Week 5](#week-5)
-        - [Mobile](#mobile)
-        - [Poster](#poster)
-        - [Product video](#product-video)
-
+- [Team](#team)
+    - [Getting started](#getting_started)
+    - [Progression](#progression)
+        - [Week 1](#week-1)
+            - [User story](#user-story)
+            - [User scenario](#user-scenario)
+            - [Concept](#concept)
+        - [Week 2](#week-2)
+            - [Automate workflow](#automate-workflow)
+            - [Coding](#coding)
+            - [Presentation](#presentation)
+        - [Week 3](#week-3)
+            - [Product](#product)
+            - [Testing](#testing)
+        - [Week 4](#week-4)
+            - [Testing](#testing-1)
+        - [Week 5](#week-5)
+            - [Mobile](#mobile)
+            - [Poster](#poster)
+            - [Product video](#product-video)
 
 ## Description
-The OBA Search a Book is an application where an user can search for a book that they vaguely remembered. 
+The OBA Search a Book is an application where an user can search for a book that they vaguely remembered. If anyone doesn't know the writer or title of a book the user can use our application. With not a lot of 
 
 This application is created by Chanakarn Niyornram, Victor Zumpolle, Emiel Muis and Desley Aalderink commissioned by Openbare Bibliotheek Amsterdam. 
 
-## Getting started
+## Learning goals
+
+## Team
+
+### Getting started
 
 Install all dependencies
 ```
@@ -55,23 +65,23 @@ Standard port is 3000
 localhost:3000
 ```
 
-## Progression
+### Progression
 
 *The progression section gives a weekly insight to what the team is working on, what for problems we've encountered and how we've dealth with the problems during our project.*
 
-### Week 1
+#### Week 1
 
 The focus of the first week lays on understanding and debriefing the client problem. From there we're creating an user story and an user scenario that gives us an idea what the visitors of the OBA wants and how the perfect scenario would be. And last but not least creating a concept for solving this solution.
 
-#### User story
+##### User story
 
 The high school student comes in the OBA and is looking for a book. With a description without title and writer, the librarian can do nothing. The student can use the installation next to the desk to find his / her book. The books are filtered by - among other things -  the subject, thickness of the book and the color of the cover. The student finds the right book, can see where it is, whether it is available and then borrow the book.
 
-#### User scenario
+##### User scenario
 
 The high school student is looking for a book, of which he or she no longer knows the title and the writer. Through a web application, the student can find the book in the OBA.
 
-#### Concept
+##### Concept
 
 To comes up with a concept, we first generate ideas that are enable to solve this problem. 
 
@@ -91,11 +101,11 @@ After generating ideas, every member created their own concept of a web applicat
 <img src='readme_assets/concept-one.jpg' alt="A zoomed in photo of one of the concept">
 </details>
 
-### Week 2
+#### Week 2
 
 The focus of the second week is setting up a development workflow and understand the API that is given from OBA.
 
-#### Automate workflow
+##### Automate workflow
 
 To streamline our development enviroment we're creating a taskrunner that will automate some of our work. Those work are:
 
@@ -121,7 +131,7 @@ After a long discussion we're going to rewrite the Gulp task in NPM Script becau
 
 - When NPM install, all dependencies of the automated script will be installed, so when someone else clone our repository, than they will also have and understand the task that will be runned.
 
-#### Git flow 
+##### Git flow 
 
 To be able to develop in a team, we're using git as our Version Control System and using Github as our platform for uploading our code. To avoid conflict we're are going to create branche whenever any feature is added. 
 
@@ -135,14 +145,14 @@ When presented this to Danny (our advisor), he found it a good idea, but it's no
 
 With the help of Danny, we've implemented every ideas except the Template part, because we think it's unnecessary because the project is private for now.
 
-#### Coding
+##### Coding
 
 To understand and create a better concept for the problem, we need to know which data the API is giving us. Two members worked on this.
 The problem was that they a different module for this. One member worked with  Request module and the other with the Node-fetch module. This create conflict. 
 
 After a discussion we choose to use Node-fetch. We choose this because, it use the same fetch syntax as the front-end. This means that other member of the team are able to understand the code better. Also it creates concistency in the code, between the front- and backend.
 
-#### Presentation
+##### Presentation
 
 We pitch our idea and concept to Mark (product owner) to get feedback and to know what he's opions is about the concept.
 
@@ -152,11 +162,11 @@ We pitch our idea and concept to Mark (product owner) to get feedback and to kno
 <img src='readme_assets/presentation.jpg' alt="A zoomed in photo of one of the concept">
 </details>
 
-### Week 3
+#### Week 3
 
 The focus of week 3 is to create a proof of concept and test this out with real users.
 
-#### Product
+##### Product
 
 When we first starting to create this applicatoin, we intentionally didn't focus  on the appearence, because we want this application firstly to work. 
 
@@ -165,7 +175,7 @@ This is an image of the early version of our application.
 ![early version of the Zoek 'n Boek application](readme_assets/earlyVersion.PNG)
 
 
-#### Testing
+##### Testing
 To make this application really great and to see if our product really work, we need to test this with real users. Mark created an appoinment with one of the Highschool in the area for us to test. However because of miscomunication we aren't able to test the application further. 
 
 But we still need to know if our app works, so we test our app with our colleague and our mentor.
@@ -201,10 +211,10 @@ __Feedback (in dutch)__
 - State 4 naar 2 na gebruik slider gaat kapot door het verkeerd verwijderen van class "none"
 - Er moet een terugknop komen op de resultaten- en detailpagina
 
-### Week 4
+#### Week 4
 The focus of week 4 is to work further and improve the application with the feedback that is given. And also to test it with real users.
 
-#### Testing
+##### Testing
 After improving our applicaton we went to a highschool in our area. We test our application with five users and every test is done individually. 
 
 [Link to our testplan (in dutch)](readme_assets/testplan.pdf)
@@ -218,15 +228,15 @@ After improving our applicaton we went to a highschool in our area. We test our 
 <img src='readme_assets/feedback4.jpeg' alt="Photo of feedback">
 </details>
 
-### Week 5
+#### Week 5
 The focus of week 5 is to improve our application and to make the application useable for mobile so that even a user at home is able to use the application.
 We also created a poster and a product video for our end presentation.
 
-#### Mobile
+##### Mobile
 We made the application useable for mobile and this is how it looks.
 ![Mobile version](readme_assets/boegle-mobile.gif)
 
-#### Poster
+##### Poster
 We've also made poster to put at our stand for the end presentation.
 
 <details>
