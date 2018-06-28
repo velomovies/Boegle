@@ -8,8 +8,8 @@ At the bottom of this readme you can find the team readme. It's the same readme 
 
 - [Description](#description)
 - [Learning goals](#learning-goals)
-- [What?](#what-)
-- [Classes](#classes)
+- [What?](#what)
+- [The minor subjects](#the-minor-subjects)
   * [Web app from scratch](#web-app-from-scratch)
   * [CSS to the rescue](#css-to-the-rescue)
   * [Browser technologies](#browser-technologies)
@@ -78,7 +78,7 @@ Next to the link I made a list of what I did and how it covers my learning goals
 * Made a poster
 * Filmed a video
 
-## Classes
+## The minor subjects
 
 In the minor we did six different classes. We had to make sure that we used a few subjects in our application. You can see that all six are listed. Every subject has a little explanation. Most of the things we did together in a team. This is why you see 'we' so often. 
 
