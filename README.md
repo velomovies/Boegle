@@ -2,35 +2,43 @@
 
 Five weeks ago we had no idea where we would be on this moment. What have we done by then? What do we learn? At the moment I can tell exactly about what the answers are. In this document you can find everything about the 'Meesterproef' and what I did the past five weeks.
 
-Amsterdam OBA | To search a book
-
-![A demo of the OBA searchbook](readme_assets/application-introduction-v1.gif)
-
 At the bottom of this readme you can find the team readme. It's the same readme as the [boegle repo](https://github.com/Boegle/Boegle). All things you read there we did together. We divided the application in four things. We choose a part that fits the best by each learn goal we set our selfs.
 
 ## Table of contents
 
 - [Description](#description)
+- [Learning goals](#learning-goals)
+- [What?](#what-)
+- [Classes](#classes)
+  * [Web app from scratch](#web-app-from-scratch)
+  * [CSS to the rescue](#css-to-the-rescue)
+  * [Browser technologies](#browser-technologies)
+  * [Performance Matters](#performance-matters)
+  * [Webdesign](#webdesign)
+  * [Realtime web](#realtime-web)
+- [Proudest Code](#proudest-code)
+- [Git flow](#git-flow)
+- [Video](#video)
 - [Team](#team)
-    - [Getting started](#getting_started)
-    - [Progression](#progression)
-        - [Week 1](#week-1)
-            - [User story](#user-story)
-            - [User scenario](#user-scenario)
-            - [Concept](#concept)
-        - [Week 2](#week-2)
-            - [Automate workflow](#automate-workflow)
-            - [Coding](#coding)
-            - [Presentation](#presentation)
-        - [Week 3](#week-3)
-            - [Product](#product)
-            - [Testing](#testing)
-        - [Week 4](#week-4)
-            - [Testing](#testing-1)
-        - [Week 5](#week-5)
-            - [Mobile](#mobile)
-            - [Poster](#poster)
-            - [Product video](#product-video)
+  * [Getting started](#getting-started)
+  * [Progression](#progression)
+    + [Week 1](#week-1)
+      - [User story](#user-story)
+      - [User scenario](#user-scenario)
+      - [Concept](#concept)
+    + [Week 2](#week-2)
+      - [Automate workflow](#automate-workflow)
+      - [Git flow](#git-flow-1)
+      - [Coding](#coding)
+      - [Presentation](#presentation)
+    + [Week 3](#week-3)
+      - [Product](#product)
+      - [Testing](#testing)
+    + [Week 4](#week-4)
+      - [Testing](#testing-1)
+    + [Week 5](#week-5)
+      - [Mobile](#mobile)
+      - [Poster](#poster)
 
 ## Description
 The OBA Search a Book is an application where an user can search for a book that they vaguely remembered. If anyone doesn't know the writer or title of a book the user can use our application. With not a lot of information. 
@@ -275,11 +283,13 @@ Emiel made a storyboard and with 2 days to go we had to prepare for everything. 
 
 ---
 
----
-
-## Team
+# Team
 
 From here is the team readme. This one has a overview of all weeks and what we all did together.
+
+Amsterdam OBA | To search a book
+
+![A demo of the OBA searchbook](readme_assets/application-introduction-v1.gif)
 
 ### Getting started
 
