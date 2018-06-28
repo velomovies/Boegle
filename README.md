@@ -33,13 +33,253 @@ At the bottom of this readme you can find the team readme. It's the same readme 
             - [Product video](#product-video)
 
 ## Description
-The OBA Search a Book is an application where an user can search for a book that they vaguely remembered. If anyone doesn't know the writer or title of a book the user can use our application. With not a lot of 
+The OBA Search a Book is an application where an user can search for a book that they vaguely remembered. If anyone doesn't know the writer or title of a book the user can use our application. With not a lot of information. 
 
 This application is created by Chanakarn Niyornram, Victor Zumpolle, Emiel Muis and Desley Aalderink commissioned by Openbare Bibliotheek Amsterdam. 
 
 ## Learning goals
 
+1. Working with modules (in JS)
+
+2. Working with data. Where does the data 'life' in the application
+
+---
+
+Added later because I earlier didn't think to work in a team. In the end I choose to work in a team because I think we together could make a better problem. This because everyone had kind of the same idea of the application.
+
+
+3. Working in a team. How can I make sure I can trust other people to do the job.
+
+4. Getting a great GIT workflow. Using git in the command line etc.
+
+## What?
+
+Below you can find of all things I did. To see a list of code I added to the website you can [click here](https://github.com/Boegle/Boegle/pulls?utf8=%E2%9C%93&q=is%3Aclosed+is%3Apr+author%3Avelomovies+). 
+
+Next to the link I made a list of what I did and how it covers my learning goals.
+
+* Helped with setting up the npm scripts
+* Working with socket IO
+* Getting data from OBA
+* Showing data from OBA
+* Did a lot of code reviews
+* Used ejs templating
+* Filter all data
+* Had discussions about code
+* Made a point system
+* Made a poster
+* Filmed a video
+
+## Classes
+
+In the minor we did six different classes. We had to make sure that we used a few subjects in our application. You can see that all six are listed. Every subject has a little explanation. Most of the things we did together in a team. This is why you see 'we' so often. 
+
+Most of the things I did was with the data we could get from the OBA and the data to be send to the user. If it was needed I did some frontend a few times. This immediately did learn me how to let go of something and trust that it will be beautifull.
+
+With most of the subjects we could have done more, but time was not on our side. We wanted to make sure there was a fully working version and after that we would look in to other things. I said, we could, and thats true. All the things we could do where on the Could of MoSCoW.
+
+### Web app from scratch
+
+We had a convention in the team to use object oriented javascripting. So everywhere there is javascript we used objects. Next to that I made modules server and client side. I learned about the big difference in 
+
+serverside:
+
+```javascript
+const moduleTwo = require('./moduleTwo')
+
+//Run some code using moduleTwo
+
+module.exports = moduleOne
+```
+
+clientside:
+
+```javascript
+import{mainBook} from './modules/module.js'
+
+// Use module in main.js
+mainBook.init()
+
+/////////////////////////
+
+// Some code... in module...
+const mainBook = {
+    init: function() {
+        // Some code
+    }
+}
+
+export mainBook
+```
+
+### CSS to the rescue
+
+I did a few little things with CSS. We choose to only use CSS and not go with 'the usual' SASS. This was because we thought for the scale of this application it would have been undue. Vanilla CSS will last longer in time so if we are able to write good CSS it's a win for us.
+
+### Browser technologies
+
+For browser technologies I did minor things actually to the website. We checked the compatibility of a few devices. That was a succes. Next to that we checked almost every feature in the [caniuse](https://caniuse.com/). The features that could not be used (if they where js) I tried to get working serverside.
+
+We did think about what to do with no-js. We thought about that one and came to a good solution. Because of time we couldn't inplement this fully, but it would have worked as follows:
+
+* The book would have been four pages among each other.
+* The results would only return on the result page.
+* You submit a form when going to a different page.
+* See all results among eachother.
+* Not getting live feedback of socket.
+* Popups will not popup but you will scroll to the right section.
+
+### Performance Matters
+
+Using severside rendering. There
+
+Send data via socket.io. It will automatically send data when the user has an input.
+
+```javascript
+const api = require('./api')
+
+const socketIO = {
+  init: function(io) {
+    io.on('connection', (socket) => {
+      socket.on('searchValues', (data) => api.getUrl(io, socket, data))
+    })
+  }
+}
+
+module.exports = socketIO
+```
+
+### Webdesign
+
+We made sure we used a few principles. We all did webdesign in our application. 
+
+Next to webdesign I also did a design thing. I made the poster for the presentation.
+
+<details>
+<summary>Click to see: some posters</summary>
+<p>poster</p>
+<img src='readme_assets/poster5.jpeg' alt="Poster">
+<img src='readme_assets/poster6.jpeg' alt="Poster">
+</details>
+
+### Realtime web
+
+Used api that should be updated every day. I used the OBA api. The data model for the application was as follows:
+
+![Data model](readme_assets/datamodel.png)
+> This is the way data is send through the application
+
+## Proudest Code
+
+The code I liked the most was about making sure the user got the right book. It is a complicated filter system. The problem I had was that the data I got only showed 20 results. For every other 20 it would the loading be slower. In the end it resulted in a longer loading time but much more accurate results. 
+
+Data I could filter in the call was:
+* Title
+* Author
+* Published year
+* Genre
+* Target audience
+* Language
+
+A few data points I had to search per result and could only be done when you click on the result button. That data consists of:
+* Publisher
+* Cover color
+* 2nd author/illustrator
+* Summary
+* Kind of illustrations
+
+The last list was the most difficult to filter. I came up with an idea for ordering the results instead of filtering on that list. I made code that would give points everytime users input and the book would match. It will check each word of the summary and compare it with the users input.
+
+```javascript
+if(userData.summary[0] !== '') {
+          userData.summary.forEach((word) => {
+            if(dataElement.summary.indexOf(word) > -1) {
+              console.log('Add 1 point for summary')
+              dataElement.point++
+            }   
+          })
+        }
+
+        if(userData.illustrator[0] !== '') {
+          userData.illustrator.forEach((word) => {
+            if(dataElement.illustrator.indexOf(word) > -1) {
+              console.log('Add 10 points for illustrator')
+              dataElement.point = dataElement.point + 10
+            }
+          })
+        }
+
+        if(userData.publisher[0] !== '') {
+          userData.publisher.forEach((word) => {
+            dataElement.publisher.forEach((element) => {
+              if(element.indexOf(word) > -1) {
+                console.log('Add 10 points for publisher')
+                dataElement.point = dataElement.point + 10
+              }
+            }) 
+          })
+        }
+
+        if(userData.pages !== '1') {
+          if(Number(userData.pages) + 100 > Number(dataElement.pages) && Number(userData.pages) - 100 < Number(dataElement.pages)) {
+            console.log('Add 5 points for pages')
+            dataElement.point = dataElement.point + 5
+          }
+        }
+
+        if(userData.illustrations !== '') {
+          if(userData.illustrations === 'color' && dataElement.illustrations.indexOf('gekleurde') > -1) {
+            console.log('Add 10 points for color')
+            dataElement.point = dataElement.point + 10
+          } else if (userData.illustrations === 'black' && data.illustrations.indexOf('zwart-wit') > -1) {
+            console.log('Add 10 points for black and white')
+            dataElement.point = dataElement.point + 10
+          }
+
+          if((userData.illustrations === 'color' || userData.illustrations === 'black') && dataElement.illustrations.indexOf('ill') > -1) {
+            console.log('Add 5 points for illustrations')
+            dataElement.point = dataElement.point + 5
+          }
+```
+
+The code below would put the book with the most points in front. That way it is more likely that the user gets his result even though there could be 100 results.
+
+```javascript
+const processData = {
+    compare: function(a, b) {
+        const pointA = a.point
+        const pointB = b.point
+
+        let comparison = 0
+        if(pointA > pointB) {
+        comparison = 1
+        } else if(pointA < pointB) {
+        comparison = -1
+        }
+        return comparison * -1
+    }
+}
+```
+
+## Git flow
+
+In our git flow we delete branches that aren't used anymore. That makes it much more readable when you are searching something. We choose to have a few commit messages. In all caps you had to choose what you wanted to do. Like adding a slider would be: `ADD - Working slider`.
+
+We protected the develop branch and made sure there had do be at least one person checking your code. That way we should have much more consistent code through the whole application. It was strictly forbidden to set something on the main branch. For every feature of fix there had to be a new branch. The branch name was either `fix or feature` with a `/`. So adding a filter would have been: `feature/filter`.
+
+## Video
+
+At the beginning of the 'Meesterproef' we talked about filming a nice video. I thought personally that there would be not enough time. In the end we just went with it and went to a cool studio in Amsterdam. 
+
+Emiel made a storyboard and with 2 days to go we had to prepare for everything. I wanted to do the camera work so I prepared all my stuff. In the end we filmed for 5 hours and in the end had a nice video. In my process book I put a few images. Next to that you can find the video [here](https://drive.google.com/open?id=1dJvaKSNhK3F9K717XYYtxqhfJ6Q5CnCg).
+
+---
+
+---
+
 ## Team
+
+From here is the team readme. This one has a overview of all weeks and what we all did together.
 
 ### Getting started
 
